@@ -1,0 +1,19 @@
+apiVersion: delivery.ocm.software/v1alpha1
+kind: ComponentVersion
+metadata:
+  name: podinfo
+  namespace: ocm-system
+spec:
+  interval: 10m0s
+  component: github.com/acme/podinfo
+  version:
+    semver: v1.5.0
+  repository:
+    url: podinfo-component.int.repositories.cloud.sap
+    secretRef:
+      name: acreds
+  # verify:
+  # - name: alice
+  #   publicKey:
+  #     secretRef:
+  #       name: alice-publickey
